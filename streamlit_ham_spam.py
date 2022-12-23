@@ -17,7 +17,7 @@ data = pd.read_csv("spam.csv", encoding='latin-1')
 
 #--------------
 # GUI
-st.title("Data Science Project")
+st.title("Spam Detection in SMS (text) data using Machine Learning")
 st.write("## Ham vs Spam")
 
 # Upload file
@@ -63,12 +63,12 @@ y_prob = model.predict_proba(X_test)
 roc = roc_auc_score(y_test, y_prob[:, 1])
 
 #5. Save models
-# luu model classication
+# model classication
 pkl_filename = "ham_spam_model.pkl"  
 with open(pkl_filename, 'wb') as file:  
     pickle.dump(model, file)
   
-# luu model CountVectorizer (count)
+# model CountVectorizer (count)
 pkl_count = "count_model.pkl"  
 with open(pkl_count, 'wb') as file:  
     pickle.dump(count, file)
@@ -96,7 +96,7 @@ if choice == "Business Objective":
     
 elif choice == "Build Project":
     st.subheader("Build Project")
-    st.write("##### 1. Some data")
+    st.write("##### 1.Using head() and tail() function ")
     st.dataframe(data[["v2", "v1"]].head(3))
     st.dataframe(data[["v2", "v1"]].tail(3))
 
