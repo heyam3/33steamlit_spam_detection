@@ -119,13 +119,8 @@ elif choice == "Build Project":
     st.code("Accuracy:" + str(round(acc, 2)))
     st.write("###### Confusion matrix:")
     st.code(cm)
-    fig2=sns.heatmap(cm, annot=True)
-    st.pyplot(fig2.figure)
-    st.write("###### Classification report:")
-    st.code(cr)
-    fig2=sns.heatmap(cm, annot=True)
-    st.pyplot(fig2.figure)
-    st.code("ROC AUC Score:" + str(round(roc, 2)))
+    st.write("###### Heapmap of Conusion matrix:")
+    
     group_names = ['True Neg','False Pos','False Neg','True Pos']
     group_counts = ["{0:0.0f}".format(value) for value in
                 cm.flatten()]
@@ -136,6 +131,9 @@ elif choice == "Build Project":
     labels = np.asarray(labels).reshape(2,2)
     fig3=sns.heatmap(cm, annot=labels,fmt='', cmap='Blues')
     st.pyplot(fig3.figure)
+    st.write("###### Classification report:")
+    st.code(cr)
+    st.code("ROC AUC Score:" + str(round(roc, 2)))
     # Calculate ROC Curve
     st.write("###### ROC Curve")
     fpr, tpr, threholds = roc_curve(y_test, y_prob[:, 1])
