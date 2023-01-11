@@ -141,7 +141,7 @@ elif choice == "Build Project":
     st.pyplot(fig1.figure)
 
     st.write("##### 3. Build Model...")
-    fig4 = generate_wordcloud(df_spam, 'SPAM')
+    fig4 = sns.generate_wordcloud(df_spam, 'SPAM')
     st.pyplot(fig4.figure)
     st.write("##### 4. Evaluation")
     st.code("Score train:" + str(round(score_train, 2)) +  "vs Score test:" + str(round(score_test, 2)))
