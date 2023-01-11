@@ -143,6 +143,7 @@ elif choice == "Build Project":
     st.write("##### 3. Word Cloud Generation...")
     st.set_option('deprecation.showPyplotGlobalUse', False)
     fig4 = generate_wordcloud(df_spam, 'SPAM')
+    st.write(" ")
     st.pyplot(fig4)
     fig5 = generate_wordcloud(df_ham, 'HAM')
     st.pyplot(fig5)
