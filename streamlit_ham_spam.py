@@ -90,9 +90,15 @@ choice = st.sidebar.selectbox("Menu", menu)
 if choice == "Business Objective":
     st.subheader("Business Objective")
     st.write("""
-	    ###### The quickest and most convenient sources of information today are the internet and social media. The most important information sources are reviews, opinions, feedback, communications, and suggestions. We may now extract useful information from such data by utilizing technological advancements like Natural Language Processing (NLP) approaches.
-NLP, a subfield of artificial intelligence (AI), uses computers and human natural language to generate useful data. We employ NLP for text classification tasks like document categorization, sentiment analysis, text generation, and spam detection.
-Classifying spam and ham messages is one of the most common natural language processing tasks for emails and chat engines. With the advancements in machine learning and natural language processing techniques, it is now possible to separate spam messages from ham messages with a high degree of accuracy.
+	    ###### The quickest and most convenient sources of information today are the internet and social media. 
+	    The most important information sources are reviews, opinions, feedback, communications, and suggestions.
+	    We may now extract useful information from such data by utilizing technological advancements like Natural 
+	    Language Processing (NLP) approaches.NLP, a subfield of artificial intelligence (AI), uses computers and 
+	    human natural language to generate useful data. We employ NLP for text classification tasks like document 
+	    categorization, sentiment analysis, text generation, and spam detection.
+	    Classifying spam and ham messages is one of the most common natural language processing tasks for emails and chat engines.
+	    With the advancements in machine learning and natural language processing techniques, it is now possible to separate spam 
+	    messages from ham messages with a high degree of accuracy.
 	    """)  
     st.write("""###### => Problem/ Requirement: Use Machine Learning algorithms in Python for ham and spam message classification.""")
     st.image("ham_spam.jpg")
