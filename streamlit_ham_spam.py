@@ -128,7 +128,7 @@ elif choice == "Build Project":
     st.code("Score train:" + str(round(score_train, 2)) +  "vs Score test:" + str(round(score_test, 2)))
     st.code("Accuracy:" + str(round(acc, 2)))
     st.write("###### Classification report:")
-    st.code(cr
+    st.code(cr)
     st.write("###### Confusion matrix:")
     st.code(cm)
     st.write("###### Heapmap of Conusion matrix:")
@@ -143,7 +143,7 @@ elif choice == "Build Project":
     labels = np.asarray(labels).reshape(2,2)
     fig2=sns.heatmap(cm, annot=labels,fmt='', cmap='Blues')
     st.pyplot(fig2.figure)
-    )
+    
     
     # Calculate ROC Curve
     st.write("###### ROC Curve")
