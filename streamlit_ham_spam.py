@@ -126,15 +126,15 @@ elif choice == "Build Project":
     fig2=sns.heatmap(cm, annot=True)
     st.pyplot(fig2.figure)
     st.code("ROC AUC Score:" + str(round(roc, 2)))
-    group_names = [‘True Neg’,’False Pos’,’False Neg’,’True Pos’]
-    group_counts = [“{0:0.0f}”.format(value) for value in
+    group_names = ['True Neg','False Pos','False Neg','True Pos']
+    group_counts = ["{0:0.0f}".format(value) for value in
                 cm.flatten()]
-    group_percentages = [“{0:.2%}”.format(value) for value in
+    group_percentages = ["{0:.2%}".format(value) for value in
                      cm.flatten()/np.sum(cm)]
-    labels = [f”{v1}\n{v2}\n{v3}” for v1, v2, v3 in
+    labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
           zip(group_names,group_counts,group_percentages)]
     labels = np.asarray(labels).reshape(2,2)
-    fig3=sns.heatmap(cm, annot=labels, fmt=‘’, cmap='Blues')
+    fig3=sns.heatmap(cm, annot=labels,fmt='', cmap='Blues')
     st.pyplot(fig3.figure)
     # Calculate ROC Curve
     st.write("###### ROC Curve")
