@@ -121,8 +121,10 @@ elif choice == "Build Project":
     st.code(cm)
     st.write("###### Classification report:")
     st.code(cr)
+    fig2=sns.heatmap(cm, annot=True)
+    st.pyplot(fig2.figure)
     st.code("ROC AUC Score:" + str(round(roc, 2)))
-
+	
     # Calculate ROC Curve
     st.write("###### ROC Curve")
     fpr, tpr, threholds = roc_curve(y_test, y_prob[:, 1])
