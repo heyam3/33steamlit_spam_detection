@@ -143,6 +143,8 @@ elif choice == "Build Project":
     st.pyplot(fig2.figure)
     st.write("###### Classification report:")
     st.code(cr)
+    fig3=sns.heatmap(pd.DataFrame(cr).iloc[:-1, :].T, annot=True)
+    st.pyplot(fig3.figure)
     st.code("ROC AUC Score:" + str(round(roc, 2)))
     # Calculate ROC Curve
     st.write("###### ROC Curve")
