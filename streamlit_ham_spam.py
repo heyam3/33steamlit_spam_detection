@@ -117,7 +117,7 @@ elif choice == "Build Project":
 
     st.write("##### 3. Build Model...")
     st.write("##### 4. Evaluation")
-    st.code("Score train:" + str(round(score_train, 2)) + " vs "Score test:" + str(round(score_test, 2)))
+    st.code("Score train:" + str(round(score_train, 2)) +  vs "Score test:" + str(round(score_test, 2)))
     st.code("Accuracy:" + str(round(acc, 2)))
     st.write("###### Confusion matrix:")
     st.code(cm)
