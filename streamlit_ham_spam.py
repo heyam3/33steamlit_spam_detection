@@ -56,6 +56,23 @@ X = bag_of_words.toarray()
 y = np.array(target)
 
 # 3. Build model
+df_spam  = data[data.v1 == 'spam'].copy()
+df_ham = data[data.v1 == 'ham'].copy()
+
+import wordcloud
+
+def generate_wordcloud(data_frame, v1):
+    text = ' '.join(data_frame['v2'].astype(str).tolist())
+    stopwords = set(wordcloud.STOPWORDS)
+    
+    fig_wordcloud = wordcloud.WordCloud(stopwords=stopwords,background_color='lightgrey',
+                    colormap='viridis', width=800, height=600).generate(text)
+    
+    plt.figure(figsize=(10,7), frameon=True)
+    plt.imshow(fig_wordcloud)  
+    plt.axis('off')
+    plt.title(v1, fontsize=20 )
+    plt.show()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=0) 
 
 clf = MultinomialNB()
@@ -124,6 +141,8 @@ elif choice == "Build Project":
     st.pyplot(fig1.figure)
 
     st.write("##### 3. Build Model...")
+    fig4 = generate_wordcloud(df_spam, 'SPAM')
+    st.pyplot(fig4.figure)
     st.write("##### 4. Evaluation")
     st.code("Score train:" + str(round(score_train, 2)) +  "vs Score test:" + str(round(score_test, 2)))
     st.code("Accuracy:" + str(round(acc, 2)))
