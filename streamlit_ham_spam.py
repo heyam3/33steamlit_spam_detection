@@ -121,7 +121,7 @@ elif choice == "Build Project":
     st.code(cm)
     st.write("###### Heapmap of Conusion matrix:")
     
-    group_names = ['True Pos','False Pos','False Neg','True Neg']
+    group_names = ['True Neg','False Pos','False Neg','True Pos']
     group_counts = ["{0:0.0f}".format(value) for value in
                 cm.flatten()]
     group_percentages = ["{0:.2%}".format(value) for value in
@@ -129,8 +129,8 @@ elif choice == "Build Project":
     labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
           zip(group_names,group_counts,group_percentages)]
     labels = np.asarray(labels).reshape(2,2)
-    fig3=sns.heatmap(cm, annot=labels,fmt='', cmap='Blues')
-    st.pyplot(fig3.figure)
+    fig2=sns.heatmap(cm, annot=labels,fmt='', cmap='Blues')
+    st.pyplot(fig2.figure)
     st.write("###### Classification report:")
     st.code(cr)
     st.code("ROC AUC Score:" + str(round(roc, 2)))
