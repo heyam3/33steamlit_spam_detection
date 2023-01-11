@@ -121,7 +121,7 @@ elif choice == "Build Project":
     st.code(cm)
     st.write("###### Heapmap of Conusion matrix:")
     
-    group_names = ['True Neg','False Pos','False Neg','True Pos']
+    group_names = ['True Pos','False Pos','False Neg','True Neg']
     group_counts = ["{0:0.0f}".format(value) for value in
                 cm.flatten()]
     group_percentages = ["{0:.2%}".format(value) for value in
