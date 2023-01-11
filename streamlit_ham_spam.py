@@ -18,6 +18,8 @@ data = pd.read_csv("spam.csv", encoding='latin-1')
 
 #--------------
 # GUI
+original_title = '<p style="font-family:Courier; color:Blue; font-size: 20px;">Original image</p>'
+st.markdown(original_title, unsafe_allow_html=True)
 st.title("Spam Detection in SMS (text) data using Machine Learning")
 st.write("## Ham vs Spam")
 
