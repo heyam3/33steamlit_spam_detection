@@ -140,7 +140,7 @@ elif choice == "Build Project":
     fig1 = sns.countplot(data=data[["v1"]], x="v1")
     st.pyplot(fig1.figure)
 
-    st.write("##### 3. Build Model...")
+    st.write("##### 3. Word Cloud Generation...")
     st.set_option('deprecation.showPyplotGlobalUse', False)
     fig4 = generate_wordcloud(df_spam, 'SPAM')
     st.pyplot(fig4)
