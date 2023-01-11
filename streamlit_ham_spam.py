@@ -127,6 +127,8 @@ elif choice == "Build Project":
     st.write("##### 4. Evaluation")
     st.code("Score train:" + str(round(score_train, 2)) +  "vs Score test:" + str(round(score_test, 2)))
     st.code("Accuracy:" + str(round(acc, 2)))
+    st.write("###### Classification report:")
+    st.code(cr
     st.write("###### Confusion matrix:")
     st.code(cm)
     st.write("###### Heapmap of Conusion matrix:")
@@ -141,9 +143,8 @@ elif choice == "Build Project":
     labels = np.asarray(labels).reshape(2,2)
     fig2=sns.heatmap(cm, annot=labels,fmt='', cmap='Blues')
     st.pyplot(fig2.figure)
-    st.write("###### Classification report:")
-    st.code(cr)
-    st.code("ROC AUC Score:" + str(round(roc, 2)))
+    )
+    
     # Calculate ROC Curve
     st.write("###### ROC Curve")
     fpr, tpr, threholds = roc_curve(y_test, y_prob[:, 1])
@@ -151,6 +152,7 @@ elif choice == "Build Project":
     ax.plot([0, 1], [0, 1], linestyle="--")
     ax.plot(fpr, tpr, marker=".")
     st.pyplot(fig)
+    st.code("ROC AUC Score:" + str(round(roc, 2)))
 
     st.write("##### 5. Summary: This model is good enough for Ham vs Spam classification.")
 
